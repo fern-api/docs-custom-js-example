@@ -1,0 +1,32 @@
+instances:
+  - url: petstore-openapi.docs.buildwithfern.com
+
+navigation:
+  - section: Get Started
+    contents: 
+      - page: Welcome 
+        path: ./docs/pages/welcome.mdx
+      - page: SDKs
+        path: ./docs/pages/sdks.mdx
+        slug: sdks
+  - api: API Reference
+
+navbar-links: 
+  - type: secondary
+    text: Contact us
+    url: "mailto:support@buildwithfern.com"
+  - type: primary
+    text: Join the Discord
+    url: https://discord.com/invite/JkkXumPzcG
+
+colors:
+  accentPrimary:
+    dark: "#adff8c"
+    light: "#376d20"
+
+logo:
+  dark: ./docs/assets/logo_dark_mode.png
+  light: ./docs/assets/logo_light_mode.png
+  height: 30
+
+favicon: ./docs/assets/favicon.ico
