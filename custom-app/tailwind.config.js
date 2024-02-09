@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const { blackA, mauve, violet, indigo, purple } = require('@radix-ui/colors');
+const { blackA, green, grass, sage, lime } = require('@radix-ui/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -12,10 +12,10 @@ module.exports = {
     extend: {
       colors: {
         ...blackA,
-        ...mauve,
-        ...violet,
-        ...purple,
-        ...indigo,
+        ...sage,
+        ...green,
+        ...grass,
+        ...lime,
       },
       keyframes: {
         enterFromRight: {
