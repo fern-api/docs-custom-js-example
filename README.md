@@ -1,4 +1,8 @@
-<br/>
+1. `cd custom-app`
+2. `yarn build`
+3. `fern-dev generate --docs`
+
+<!-- <br/>
 <div align="center">
   <a href="https://www.buildwithfern.com/?utm_source=github&utm_medium=readme&utm_campaign=docs-starter-openapi&utm_content=logo">
     <img src="/fern/docs/assets/logo_light_mode.png" height="50" align="center" alt="header" />
@@ -150,4 +154,4 @@ If you wish to use a custom subdomain like `https://docs.YOUR_ORGANIZATION.com` 
 
 For advanced documentation features and options, view the full [configuration docs](https://docs.buildwithfern.com/generate-docs/overview/configuration).
 
-Good luck creating beautiful and functional documentation! 🌿
+Good luck creating beautiful and functional documentation! 🌿 -->
