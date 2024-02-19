@@ -1,5 +1,5 @@
 instances:
-  - url: custom-js-example.docs.dev.buildwithfern.com
+  - url: custom-js-example.docs.buildwithfern.com
 
 navigation:
   - section: Get Started
@@ -15,9 +15,7 @@ navbar-links: []
 logo: {}
 
 colors:
-  accentPrimary:
-    dark: "#adff8c"
-    light: "#376d20"
+  accentPrimary: "#376d20"
 
 favicon: ./docs/assets/favicon.ico
 
