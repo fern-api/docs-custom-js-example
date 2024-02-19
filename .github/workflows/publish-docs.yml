@@ -16,6 +16,13 @@ jobs:
       - name: Install Fern
         run: npm install -g fern-api
 
+      - name: Build custom-app
+        run: |
+          cd custom-app
+          yarn
+          yarn build
+          cd ../
+
       - name: Publish Docs
         env:
           FERN_TOKEN: ${{ secrets.FERN_TOKEN }}
