@@ -10,6 +10,7 @@ export default defineConfig({
       output: {
         entryFileNames: `output.js`,
         assetFileNames: `output.[ext]`,
+        inlineDynamicImports: true,
       }
     }
   }
