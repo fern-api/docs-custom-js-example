@@ -23,27 +23,42 @@ export function renderInContainer(Component: FunctionComponent, container: HTMLE
 }
 
 export function onDOMContentMutate(render: () => void) {
-    // observe DOM changes to re-render the custom header and footer
-    let observations = 0
+  let hasRendered = false
+  // observe DOM changes to re-render the custom header and footer
+  let observations = 0
+
+  const setupMutationObserver = () => {
+    if (!hasRendered) {
+      console.log("Initial render")
+      render()
+      hasRendered = true
+    }
+    new MutationObserver((e, o) => {
+      for (const item of e) {
+      if (item.target instanceof HTMLElement) {
+          const target = item.target
+          if (target.id === 'fern-header' || target.id === 'fern-footer') {
+          if (observations < 3) {
+              // react hydration will trigger a mutation event
+              observations++
+          } else {
+              o.disconnect()
+          }
+          break
+        }
+      }
+    }
+  }).observe(document.body, { childList: true, subtree: true })
+}
+
+  // if DOM is already loaded we run 
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        console.log('DOMContentLoaded')
-        render()
-        new MutationObserver((e, o) => {
-            render()
-            for (const item of e) {
-            if (item.target instanceof HTMLElement) {
-                const target = item.target
-                if (target.id === 'fern-header' || target.id === 'fern-footer') {
-                if (observations < 3) {
-                    // react hydration will trigger a mutation event
-                    observations++
-                } else {
-                    o.disconnect()
-                }
-                break
-                }
-            }
-            }
-        }).observe(document.body, { childList: true, subtree: true })
+      console.log('DOMContentLoaded (delayed)')
+      setupMutationObserver()
     })
+  } else {
+    console.log('DOMContentLoaded already fired')
+    setupMutationObserver()
+  }
 }
