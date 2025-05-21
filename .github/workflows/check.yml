@@ -16,5 +16,12 @@ jobs:
       - name: Install Fern
         run: npm install -g fern-api
 
+      - name: Build custom-app
+        run: |
+          cd custom-app
+          yarn
+          yarn build
+          cd ../
+
       - name: Check API is valid
         run: fern check
