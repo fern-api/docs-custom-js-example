@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --spacing-custom-header-height: 80px; 
+}
+
+#fern-header {
+  height: var(--spacing-custom-header-height) !important;
+}
+
+#fern-footer {
+  position: relative;
+}

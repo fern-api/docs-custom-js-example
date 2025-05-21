@@ -129,11 +129,15 @@ const NavigationMenuDemo = () => {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Link
-            className="hover:tw-no-underline hover:tw-text-grass11 tw-text-grass11 hover:tw-bg-grass3 focus:tw-shadow-grass7 tw-block tw-select-none tw-rounded-[4px] tw-px-3 tw-py-2 tw-text-[15px] tw-font-medium tw-leading-none tw-no-underline tw-outline-none focus:tw-shadow-[0_0_0_2px]"
-            href="/">
-            Github
-          </NavigationMenu.Link>
+          <NavigationMenu.Trigger
+            className="tw-text-grass11 hover:tw-bg-grass3 focus:tw-shadow-grass7 tw-group tw-flex tw-select-none tw-items-center tw-justify-between tw-gap-[2px] tw-rounded-[4px] tw-px-3 tw-py-2 tw-text-[15px] tw-font-medium tw-leading-none tw-outline-none focus:tw-shadow-[0_0_0_2px]"
+            asChild>
+            <a
+              className="hover:tw-no-underline hover:tw-text-grass11 tw-text-grass11 hover:tw-bg-grass3 focus:tw-shadow-grass7 tw-block tw-select-none tw-rounded-[4px] tw-px-3 tw-py-2 tw-text-[15px] tw-font-medium tw-leading-none tw-no-underline tw-outline-none focus:tw-shadow-[0_0_0_2px]"
+              href="/">
+              Github
+            </a>
+          </NavigationMenu.Trigger>
         </NavigationMenu.Item>
 
         <NavigationMenu.Indicator className="data-[state=visible]:tw-animate-fadeIn data-[state=hidden]:tw-animate-fadeOut tw-top-full tw-z-[1] tw-flex tw-h-[10px] tw-items-end tw-justify-center tw-overflow-hidden tw-transition-[width,transform_250ms_ease]">
@@ -157,11 +161,11 @@ const ListItem = React.forwardRef<
   HTMLAnchorElement,
   PropsWithChildren<ListItemProps>
 >(({ className, children, title, ...props }, forwardedRef) => (
-  <li>
+  <li className="tw-h-full">
     <NavigationMenu.Link asChild>
       <a
         className={classNames(
-          'hover:tw-no-underline focus:tw-shadow-[0_0_0_2px] focus:tw-shadow-grass7 hover:tw-bg-sage3 tw-block tw-select-none tw-rounded-[6px] tw-p-3 tw-text-[15px] tw-leading-none tw-no-underline tw-outline-none tw-transition-colors',
+          'hover:tw-no-underline focus:tw-shadow-[0_0_0_2px] focus:tw-shadow-grass7 hover:tw-bg-sage3 tw-block tw-select-none tw-rounded-[6px] tw-p-3 tw-text-[15px] tw-leading-none tw-no-underline tw-outline-none tw-transition-colors tw-h-full',
           className,
         )}
         {...props}

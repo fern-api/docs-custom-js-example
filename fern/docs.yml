@@ -24,4 +24,4 @@ css:
 
 js:
   - path: ./dist/output.js
-    strategy: beforeInteractive
+    strategy: afterInteractive
